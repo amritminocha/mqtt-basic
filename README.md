@@ -57,6 +57,28 @@ node publisher.js
 
 ✅ Now RabbitMQ handles MQTT messages for real-time factory monitoring. 🎯
 
+## 🔗 Subscribe to MQTT at Node-RED Dashboard
+
+### 📚 Install Node-RED
+```sh
+npm i -g node-red
+```
+
+### 🏠 Access Node-RED Dashboard
+1. Start Node-RED:
+   ```sh
+   node-red
+   ```
+2. Open [http://localhost:1880](http://localhost:1880) in a browser.
+3. Drag an **MQTT In** node and a **Debug** node onto the flow canvas.
+4. Connect the **MQTT In** node to the **Debug** node.
+5. Configure the **MQTT In** node:
+   - Set Server to `localhost:1884`
+   - Topic: `factory/machine/status`
+   - QoS: `0`
+   - Output: `a parsed JSON object`
+6. Deploy the flow and check the debug panel for incoming messages.
+
 ## 🔗 Useful Commands
 
 ### 🛠 Stop RabbitMQ Container:
